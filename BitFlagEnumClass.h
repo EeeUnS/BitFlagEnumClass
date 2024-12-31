@@ -108,5 +108,24 @@ BitFlagEnumClass<E> operator^ (E flag, BitFlagEnumClass<E> FlagClass)
 	return cast_enum(cast_num(flag) ^ cast_num(FlagClass.m_eFlag));
 }
 
-#undef cast_int
+
+template <typename E>
+BitFlagEnumClass<E> operator& (E lflag, E rflag)
+{
+	return cast_enum(cast_num(lflag) & cast_num(rflag));
+}
+
+template <typename E>
+BitFlagEnumClass<E> operator| (E lflag, E rflag)
+{
+	return cast_enum(cast_num(lflag) | cast_num(rflag));
+}
+
+template <typename E>
+BitFlagEnumClass<E> operator^ (E lflag, E rflag)
+{
+	return cast_enum(cast_num(lflag) ^ cast_num(rflag));
+}
+
+#undef cast_num
 #undef cast_enum
